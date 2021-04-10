@@ -1060,7 +1060,7 @@ MonoBehaviour:
     UpgradeCost: 1
     Output: 2
   - Name: Employee
-    UnlockCost: 500
+    UnlockCost: 1
     UpgradeCost: 500
     Output: 200
   - Name: Manager
@@ -1620,7 +1620,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _popUpTransform: {fileID: 1070021858}
   _popUpText: {fileID: 929441731}
-  _popUpDuration: 0.5
+  _popUpDuration: 2
+  _popUpSpeed: 0.3
   _achievementList:
   - Title: You Hired an Employee
     Type: 0

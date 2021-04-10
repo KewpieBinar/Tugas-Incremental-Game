@@ -23,6 +23,7 @@ public class AchievementController : MonoBehaviour
     [SerializeField] private Transform _popUpTransform;
     [SerializeField] private Text _popUpText;
     [SerializeField] private float _popUpDuration;
+    [SerializeField] private float _popUpSpeed = 0.5f;
     [SerializeField] private List<AchievementData> _achievementList;
 
     private float _popUpDurationCounter;
@@ -33,11 +34,11 @@ public class AchievementController : MonoBehaviour
         {
             _popUpDurationCounter -= Time.unscaledDeltaTime;
 
-            _popUpTransform.localScale = Vector3.LerpUnclamped(_popUpTransform.localScale, Vector3.one, 0.5f);
+            _popUpTransform.localScale = Vector3.LerpUnclamped(_popUpTransform.localScale, Vector3.one, _popUpSpeed);
         }
         else
         {
-            _popUpTransform.localScale = Vector2.LerpUnclamped(_popUpTransform.localScale, Vector3.right, 0.5f);
+            _popUpTransform.localScale = Vector2.LerpUnclamped(_popUpTransform.localScale, Vector3.right, _popUpSpeed);
         }
     }
 
@@ -57,7 +58,6 @@ public class AchievementController : MonoBehaviour
     }
 
     private void ShowAchivementPopUp(AchievementData achievement)
-
     {
 
         _popUpText.text = achievement.Title;
